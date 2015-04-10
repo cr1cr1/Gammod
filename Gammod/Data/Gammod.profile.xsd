@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="gammodprofile" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" version="1">
+  <xs:element name="profiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="profile" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="version" type="xs:string" default="1.0" minOccurs="0"/>
+              <xs:element name="author" type="xs:string" default="" minOccurs="0"/>
+              <xs:element name="dateCreated" type="xs:date" minOccurs="0"/>
+              <xs:element name="dateModified" type="xs:date" minOccurs="0"/>
+              <xs:element name="description" type="xs:string" default="" minOccurs="0"/>
+              <xs:element name="actions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!-- action element definition -->
+                    <xs:element name="action" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:choice>
+                          <!-- windows registry element -->
+                          <xs:element name="registry" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="pattern" type="xs:string"/>
+                                        <xs:attribute name="regexOptions" type="xs:string"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="hive" use="required">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="HKEY_LOCAL_MACHINE"/>
+                                    <xs:enumeration value="HKEY_CURRENT_USER"/>
+                                    <xs:enumeration value="HKEY_USERS"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="key" type="xs:string" use="required"/>
+                              <xs:attribute name="entryName" type="xs:string"/>
+                              <xs:attribute name="entryType">
+                              <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="REG_BINARY"/>
+                                    <xs:enumeration value="REG_DWORD"/>
+                                    <xs:enumeration value="REG_EXPAND_SZ"/>
+                                    <xs:enumeration value="REG_MULTI_SZ"/>
+                                    <xs:enumeration value="REG_SZ"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="delete" type="xs:boolean"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <!-- file element -->
+                          <xs:element name="file" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="replaceText" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="pattern" type="xs:string" use="required"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="fileName" type="xs:string" use="required"/>
+                              <xs:attribute name="start" type="xs:long"/>
+                              <xs:attribute name="length" type="xs:long"/>
+                              <xs:attribute name="nobackup" type="xs:boolean"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <!-- macro element: special macro built within the program -->
+                          <xs:element name="macro" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="parameter" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                              <xs:attribute name="macroName" type="xs:string" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <!-- file/folder copy element -->
+                          <xs:element name="copy" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="source" type="xs:string" use="required"/>
+                              <xs:attribute name="destination" type="xs:string" use="required"/>
+                              <xs:attribute name="force" type="xs:boolean"/>
+                              <xs:attribute name="move" type="xs:boolean"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <!-- file/folder delete element -->
+                          <xs:element name="delete" minOccurs="0">
+                            <xs:complexType>
+                              <xs:attribute name="source" type="xs:string" use="required"/>
+                              <xs:attribute name="force" type="xs:boolean"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <!-- OS command element -->
+                          <xs:element name="command" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute name="command" type="xs:string" use="required"/>
+                                  <xs:attribute name="async" type="xs:boolean"/>
+                                  <xs:attribute name="hidden" type="xs:boolean"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:choice>
+                        <xs:attribute name="actionId" type="xs:string" use="required"/>
+                        <xs:attribute name="createUserField" type="xs:boolean"/>
+                        <xs:attribute name="autorun" type="xs:boolean"/>
+                        <xs:attribute name="optional" type="xs:boolean"/>
+                        <xs:attribute name="description" type="xs:string"/>
+                        <xs:attribute name="dependsOn" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <!-- action element definition //-->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="profileName" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+
+
+
+

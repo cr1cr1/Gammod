@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+	<!--Start of schema-->
+	<xs:schema targetNamespace="gammodprofile" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="profiles">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element minOccurs="0" maxOccurs="unbounded" name="profile">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="version" type="xs:string" default="1.0" minOccurs="0" />
+								<xs:element name="author" type="xs:string" default="" minOccurs="0" />
+								<xs:element name="dateCreated" type="xs:date" minOccurs="0" />
+								<xs:element name="dateModified" type="xs:date" minOccurs="0" />
+								<xs:element name="description" type="xs:string" default="" minOccurs="0" />
+							</xs:sequence>
+							<xs:attribute name="profileName" type="xs:string" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+	<!--End of schema-->
+	<f:profiles xmlns:f="gammodprofile">
+		<profile profileName="Titanfall Blalbla">
+			<version>1.1</version>
+			<author>cr1cr1</author>
+			<dateCreated>2015-04-04</dateCreated>
+			<dateModified>2015-04-04</dateModified>
+			<description>This profile will attempt to change the default language of the game</description>
+		</profile>
+		<profile profileName="Language Changer2">
+			<version>1.0</version>
+			<author>cr1cr1</author>
+			<dateCreated>2015-04-04</dateCreated>
+			<dateModified>2015-04-04</dateModified>
+			<description>Just a test profile</description>
+		</profile>
+	</f:profiles>
+</root>

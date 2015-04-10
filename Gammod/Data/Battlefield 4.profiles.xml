@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<f:profiles xmlns:f="gammodprofile">
+	<profile profileName="Language Changer">
+		<version>1.1</version>
+		<author>cr1cr1</author>
+		<dateCreated>2015-04-04</dateCreated>
+		<dateModified>2015-04-04</dateModified>
+		<description>This profile will attempt to change the default language of the game</description>
+		<actions>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages">
+					<parameter>test</parameter>
+					<parameter>test2</parameter>
+				</macro>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="1" description="Available languages" autorun="true">
+				<macro macroName="originGameLanguages"/>
+			</action>
+			<action actionId="2">
+				<registry hive="HKEY_CURRENT_USER" key="SOFTWARE\Wow6432Node\EA Games\Test1" entryName="Locale" entryType="REG_SZ">
+					<value pattern="">${macro.originGameLanguages.OriginGameLanguagesList}</value>
+				</registry>
+			</action>
+			<action actionId="3">
+				<registry hive="HKEY_CURRENT_USER" key="SOFTWARE\Wow6432Node\EA Games\Test1" entryName="Locale" delete="true"/>
+			</action>
+			<action actionId="3">
+				<registry hive="HKEY_CURRENT_USER" key="SOFTWARE\Wow6432Node\EA Games\Test1" delete="true"/>
+			</action>
+			<action actionId="4">
+				<copy source="" destination=""/>
+			</action>
+		</actions>
+	</profile>
+	<profile profileName="Language Changer2">
+		<version>1.0</version>
+		<author>cr1cr1</author>
+		<dateCreated>2015-04-04</dateCreated>
+		<dateModified>2015-04-04</dateModified>
+		<description>Just a test profile</description>
+		<actions></actions>
+	</profile>
+</f:profiles>
