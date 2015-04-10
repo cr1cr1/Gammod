@@ -189,17 +189,6 @@ namespace Gammod
         #endregion
 
         #region MetroCustomTile Paint Events
-        private void metroTileCustom1_MouseEnter(object sender, EventArgs e)
-        {
-            if ((sender as MetroTileCustom).CustomObject != null)
-                metroTileCustom1.Text = (String)(sender as MetroTileCustom).CustomObject;
-        }
-
-        private void metroTileCustom1_MouseLeave(object sender, EventArgs e)
-        {
-            metroTileCustom1.Text = "";
-        }
-
         private void metroTileCustom_CustomPaint(object sender, MetroPaintEventArgs e)
         {
             var m = (MetroTileCustom)sender;

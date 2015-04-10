@@ -222,7 +222,7 @@
     <value>True</value>
   </data>
   <data name="metroLabel16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 28</value>
+    <value>619, 60</value>
   </data>
   <data name="metroLabel16.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 19</value>
@@ -245,11 +245,14 @@
   <data name="&gt;&gt;metroLabel16.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="metroToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 17</value>
+  </metadata>
   <data name="metroToggleDebug.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="metroToggleDebug.Location" type="System.Drawing.Point, System.Drawing">
-    <value>662, 28</value>
+    <value>662, 60</value>
   </data>
   <data name="metroToggleDebug.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 17</value>
@@ -260,9 +263,6 @@
   <data name="metroToggleDebug.Text" xml:space="preserve">
     <value>Off</value>
   </data>
-  <metadata name="metroToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 17</value>
-  </metadata>
   <data name="metroToggleDebug.ToolTip" xml:space="preserve">
     <value>Toggle Debug</value>
   </data>
@@ -277,30 +277,6 @@
   </data>
   <data name="&gt;&gt;metroToggleDebug.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="metroTileCustom1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 257</value>
-  </data>
-  <data name="metroTileCustom1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 74</value>
-  </data>
-  <data name="metroTileCustom1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="metroTileCustom1.Text" xml:space="preserve">
-    <value>metroTileCustom1</value>
-  </data>
-  <data name="&gt;&gt;metroTileCustom1.Name" xml:space="preserve">
-    <value>metroTileCustom1</value>
-  </data>
-  <data name="&gt;&gt;metroTileCustom1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTileCustom, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroTileCustom1.Parent" xml:space="preserve">
-    <value>metroTabPage1</value>
-  </data>
-  <data name="&gt;&gt;metroTileCustom1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="metroLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -327,10 +303,10 @@
     <value>metroTabPage1</value>
   </data>
   <data name="&gt;&gt;metroLabel1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="metroTileSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 83</value>
+    <value>159, 47</value>
   </data>
   <data name="metroTileSwitch.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 31</value>
@@ -344,6 +320,9 @@
   <data name="metroTileSwitch.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
+  <metadata name="metroToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 17</value>
+  </metadata>
   <data name="metroTileSwitch.ToolTip" xml:space="preserve">
     <value>Switch the current Style</value>
   </data>
@@ -357,7 +336,7 @@
     <value>metroTabPage1</value>
   </data>
   <data name="&gt;&gt;metroTileSwitch.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="metroTile1.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 47</value>
@@ -387,7 +366,7 @@
     <value>metroTabPage1</value>
   </data>
   <data name="&gt;&gt;metroTile1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="metroTabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 38</value>
@@ -494,168 +473,6 @@
   </data>
   <data name="&gt;&gt;metroTabPage7.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Name" xml:space="preserve">
-    <value>metroLabel7</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Name" xml:space="preserve">
-    <value>metroProgressSpinner3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Name" xml:space="preserve">
-    <value>metroProgressSpinner2</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Name" xml:space="preserve">
-    <value>metroLabel6</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Name" xml:space="preserve">
-    <value>metroLabel5</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Name" xml:space="preserve">
-    <value>metroProgressBar1</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Name" xml:space="preserve">
-    <value>metroLabel4</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Name" xml:space="preserve">
-    <value>metroScrollBar1</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroScrollBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Name" xml:space="preserve">
-    <value>metroTrackBar1</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Name" xml:space="preserve">
-    <value>metroProgressSpinner1</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Name" xml:space="preserve">
-    <value>metroProgressBar</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="metroTabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 38</value>
-  </data>
-  <data name="metroTabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>25, 25, 25, 25</value>
-  </data>
-  <data name="metroTabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>772, 485</value>
-  </data>
-  <data name="metroTabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="metroTabPage3.Text" xml:space="preserve">
-    <value>Scroll &amp;&amp; Progress</value>
-  </data>
-  <data name="metroTabPage3.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;metroTabPage3.Name" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroTabPage3.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroTabPage3.Parent" xml:space="preserve">
-    <value>metroTabControl1</value>
-  </data>
-  <data name="&gt;&gt;metroTabPage3.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;metroButtonOriginApply.Name" xml:space="preserve">
     <value>metroButtonOriginApply</value>
@@ -766,7 +583,7 @@
     <value>metroTabControl1</value>
   </data>
   <data name="&gt;&gt;metroTabPage5.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="metroTabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1310,297 +1127,6 @@
   </data>
   <data name="&gt;&gt;metroGrid1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="metroLabel7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="metroLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 187</value>
-  </data>
-  <data name="metroLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 19</value>
-  </data>
-  <data name="metroLabel7.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="metroLabel7.Text" xml:space="preserve">
-    <value>MetroScrollBar</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Name" xml:space="preserve">
-    <value>metroLabel7</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="metroProgressSpinner3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 146</value>
-  </data>
-  <data name="metroProgressSpinner3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="metroProgressSpinner3.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Name" xml:space="preserve">
-    <value>metroProgressSpinner3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="metroProgressSpinner2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 146</value>
-  </data>
-  <data name="metroProgressSpinner2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="metroProgressSpinner2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Name" xml:space="preserve">
-    <value>metroProgressSpinner2</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="metroLabel6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="metroLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 124</value>
-  </data>
-  <data name="metroLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 19</value>
-  </data>
-  <data name="metroLabel6.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="metroLabel6.Text" xml:space="preserve">
-    <value>MetroProgressSpinner</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Name" xml:space="preserve">
-    <value>metroLabel6</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="metroLabel5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="metroLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 124</value>
-  </data>
-  <data name="metroLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 19</value>
-  </data>
-  <data name="metroLabel5.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="metroLabel5.Text" xml:space="preserve">
-    <value>MetroTrackBar</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Name" xml:space="preserve">
-    <value>metroLabel5</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="metroProgressBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="metroProgressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 76</value>
-  </data>
-  <data name="metroProgressBar1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroProgressBar1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Name" xml:space="preserve">
-    <value>metroProgressBar1</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="metroLabel4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="metroLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 25</value>
-  </data>
-  <data name="metroLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 19</value>
-  </data>
-  <data name="metroLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="metroLabel4.Text" xml:space="preserve">
-    <value>MetroProgressBar</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Name" xml:space="preserve">
-    <value>metroLabel4</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="metroScrollBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="metroScrollBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 209</value>
-  </data>
-  <data name="metroScrollBar1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroScrollBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroScrollBar1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="metroScrollBar1.ToolTip" xml:space="preserve">
-    <value>Scrollbar Tooltip</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Name" xml:space="preserve">
-    <value>metroScrollBar1</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroScrollBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroScrollBar1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="metroTrackBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 146</value>
-  </data>
-  <data name="metroTrackBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 23</value>
-  </data>
-  <data name="metroTrackBar1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="metroTrackBar1.Text" xml:space="preserve">
-    <value>metroTrackBar1</value>
-  </data>
-  <data name="metroTrackBar1.ToolTip" xml:space="preserve">
-    <value>TrackBar Tooltip</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Name" xml:space="preserve">
-    <value>metroTrackBar1</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroTrackBar1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="metroProgressSpinner1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 146</value>
-  </data>
-  <data name="metroProgressSpinner1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="metroProgressSpinner1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="metroProgressSpinner1.ToolTip" xml:space="preserve">
-    <value>Spinner Tooltip</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Name" xml:space="preserve">
-    <value>metroProgressSpinner1</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressSpinner1.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="metroProgressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="metroProgressBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="metroProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 47</value>
-  </data>
-  <data name="metroProgressBar.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 23</value>
-  </data>
-  <data name="metroProgressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="metroProgressBar.ToolTip" xml:space="preserve">
-    <value>ProgressBar Tooltip</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Name" xml:space="preserve">
-    <value>metroProgressBar</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressBar, MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.Parent" xml:space="preserve">
-    <value>metroTabPage3</value>
-  </data>
-  <data name="&gt;&gt;metroProgressBar.ZOrder" xml:space="preserve">
-    <value>12</value>
   </data>
   <data name="metroButtonOriginApply.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
