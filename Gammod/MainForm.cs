@@ -31,12 +31,11 @@ namespace Gammod
             try
             {
                 Settings.Default.Upgrade();
-                //Settings.Default.Reload();
-                DataTable _table = new DataTable();
+                /*DataTable _table = new DataTable();
                 metroGrid1.DataSourceChanged += DataLoad;
                 _table.ReadXml(Application.StartupPath + @dataFile);
                 metroGrid1.DataSource = _table;
-                _table.RowDeleting += TableRowDeleting;
+                _table.RowDeleting += TableRowDeleting;*/
             }
             catch (Exception e)
             {
@@ -47,11 +46,9 @@ namespace Gammod
             metroGrid1.AllowUserToAddRows = false;
 
             // to prevent flickering
-            typeof(MetroPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(metroPanel2, true, null);
+            typeof(MetroPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(metroPanelDynamicFields, true, null);
         }
 
-        private String dataFile = @"\Data\Files.xml";
-        private MetroTileCustom currentTileCustom = null;
         private DebugForm debugForm;
         private Debugger dbg = new Debugger();
         private XmlDocument _currentGame = new XmlDocument();
@@ -80,14 +77,6 @@ namespace Gammod
             Settings.Default["MetroStyle"] = metroStyleManager.Theme;
         }
 
-        #region Data Loading
-
-        private void TableRowDeleting(object sender, EventArgs e)
-        {
-            Control c = metroPanel2.Controls[(sender as DataRow).Table.Rows.IndexOf(sender as DataRow) + 1];
-            metroPanel2.Controls.Remove(c);
-            c.Dispose();
-        }
 
         private void ClearControls(Control parent, Type controlType = null)
         {
@@ -112,39 +101,7 @@ namespace Gammod
             }
         }
 
-        private void DataLoad(object sender, EventArgs e)
-        {
-            metroPanel2.AutoScroll = false;
-            ClearControls(metroPanel2, typeof(MetroTileCustom));
 
-            DataTable table = (DataTable)metroGrid1.DataSource;
-            MetroTileCustom prevM = null;
-            if (table == null)
-                return;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                MetroTileCustom m = new MetroTileCustom();
-                m.TileCount = i + 1;
-                m.Left = 0;
-                if (prevM == null)
-                    m.Top = 0;
-                else
-                    m.Top = prevM.Bottom + 5;
-                m.Height = 70;
-                m.Parent = metroPanel2;
-                m.Width = m.Parent.Width - (m.Parent as MetroPanel).VerticalScrollbarSize - 2;
-                m.Text = table.Rows[i][0].ToString();
-                m.CustomObject = table.Rows[i][2].ToString();
-                m.CustomPaint += metroTileCustom_CustomPaint;
-                m.CustomPaintBackground += metroTileCustom_CustomPaintBackground;
-                m.Enter += metroTileCustom_Enter;
-                m.Leave += metroTileCustom_Leave;
-                prevM = m;
-            }
-            metroStyleManager.Style = MetroColorStyle.Orange;
-            metroLabel_ItemsCount.Text = table.Rows.Count.ToString();
-            metroPanel2.AutoScroll = true;
-        }
 
         private void ValidationHandler(object sender, ValidationEventArgs e)
         {
@@ -161,16 +118,22 @@ namespace Gammod
 
         }
 
-        public void ValidateXmlSchema(String fileName)
+        /**
+         * Validate the current XML against the profile schema
+         * */
+
+        public void ValidateXmlSchema(String fileName, String context, String xsdSchema)
         {
             _xmlValidationErrors = 0;
             // Set the validation settings.
             var settings = new XmlReaderSettings();
             settings.ValidationType = ValidationType.Schema;
-            settings.Schemas.Add("gammodprofile", @"Data\Gammod.profile.xsd");
+            //settings.Schemas.Add("gammodprofile", @"Data\Gammod.profile.xsd");
+            settings.Schemas.Add(context, xsdSchema);
             //settings.ValidationFlags |= XmlSchemaValidationFlags.ProcessInlineSchema;
             settings.ValidationFlags |= XmlSchemaValidationFlags.ReportValidationWarnings;
             settings.ValidationEventHandler += ValidationHandler;
+
             // Create the XmlReader object.
             XmlReader reader = XmlReader.Create(fileName, settings);
             // Parse the file. 
@@ -186,9 +149,9 @@ namespace Gammod
             reader.Close();
         }
 
-        #endregion
 
-        #region MetroCustomTile Paint Events
+
+        #region MetroCustomTile Paint Events - maybe will be in the future
         private void metroTileCustom_CustomPaint(object sender, MetroPaintEventArgs e)
         {
             var m = (MetroTileCustom)sender;
@@ -240,26 +203,6 @@ namespace Gammod
                 e.Graphics.Clear(hslColor);
             }
         }
-
-        private void metroTileCustom_Enter(object sender, EventArgs e)
-        {
-            currentTileCustom = (MetroTileCustom)sender;
-            var table = (DataTable)metroGrid1.DataSource;
-            if (table.Rows.Count <= 0)
-                return;
-            metroTextBox5.Text = currentTileCustom.Text;
-            metroTextBox6.Text = table.Rows[currentTileCustom.TileCount - 1][1].ToString();
-            metroTextBox7.Text = table.Rows[currentTileCustom.TileCount - 1][2].ToString();
-        }
-
-        private void metroTileCustom_Leave(object sender, EventArgs e)
-        {
-            currentTileCustom = null;
-            metroTextBox5.Text = "";
-            metroTextBox6.Text = "";
-            metroTextBox7.Text = "";
-        }
-
         #endregion
 
         private void DirSearch(String dir, String pattern, DataTable table)
@@ -289,25 +232,7 @@ namespace Gammod
             dbg.Exit();
         }
 
-        // SelectFolder button Click event
-        private void metroButton_SelectFolder_Click(object sender, EventArgs e)
-        {
-            folderBrowserDialog1.SelectedPath = System.Environment.CurrentDirectory;
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                metroTextBox9.Text = folderBrowserDialog1.SelectedPath;
-                var table = (DataTable)metroGrid1.DataSource;
-
-                metroGrid1.DataSource = null;
-                table.Clear();
-                DirSearch(folderBrowserDialog1.SelectedPath, "*.exe", table);
-                metroGrid1.DataSource = table;
-
-                table.WriteXml(Application.StartupPath + @dataFile, XmlWriteMode.WriteSchema, true);
-            }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
+       private void MainForm_Load(object sender, EventArgs e)
         {
             metroToggleDebug.Checked = (bool)Settings.Default["Debug"];
             metroToggleDebug_CheckedChanged(metroToggleDebug, null);
@@ -315,6 +240,8 @@ namespace Gammod
             // force the current style so all Metro controls get updated
             metroStyleManager.Style = (MetroColorStyle)Settings.Default["MetroColor"];
             metroStyleManager.Theme = (MetroThemeStyle)Settings.Default["MetroStyle"];
+
+            metroTextBoxRepositories.Text = Settings.Default["ProfileRepositories"].ToString();
         }
 
         #region MetroPanel Scrolling - Not used
@@ -374,9 +301,7 @@ namespace Gammod
 
         private void metroGrid1_CustomPaint(object sender, MetroPaintEventArgs e)
         {
-
             dbg.WriteText(MethodBase.GetCurrentMethod().Name, sender.GetType().ToString());
-            //dbg.DebugEnabled = false;
             //TextRenderer.DrawText(e.Graphics, m.TileCount.ToString(), MetroFonts.TileCount, new Point(m.Width - TextRenderer.MeasureText(m.TileCount.ToString(), MetroFonts.TileCount).Width, 0), MetroPaint.ForeColor.Tile.Normal(Theme));
         }
 
@@ -384,26 +309,7 @@ namespace Gammod
         {
             if (sender == null)
                 return;
-            dbg.WriteText("Index: " + (sender as MetroTabControl).SelectedIndex.ToString());
-            if ((sender as MetroTabControl).SelectedTab == metroTabPage5)
-            {
-                int i = 0;
-                metroComboBoxOriginGames.Items.Clear();
-                try
-                {
-                    List<string> dirs = new List<string>(Directory.GetDirectories(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\Origin\\LocalContent"));
-                    foreach (var dir in dirs)
-                        metroComboBoxOriginGames.Items.Add(dir.Substring(dir.LastIndexOf(@"\") + 1));
-                    i = dirs.Count;
-                }
-                catch (Exception ex)
-                {
-                    MetroMessageBox.Show(this, ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                metroComboBoxOriginGames.Items.Insert(0, " **** " + i + " game(s) **** ");
-                metroComboBoxOriginGames.SelectedIndex = 0;
-            }
-
+            dbg.WriteText("Index: " + (sender as MetroTabControl).SelectedIndex);
         }
 
         private void metroComboBoxOriginGames_SelectedIndexChanged(object sender, EventArgs e)
@@ -411,15 +317,16 @@ namespace Gammod
             dbg.Enter();
             _currentGame.RemoveAll();
             metroComboBoxOriginProfile.Items.Clear();
+            metroTextBoxGamePath.Clear();
             int i = 0;
             if (metroComboBoxOriginGames.SelectedIndex < 1)
                 goto theend;
-            String profileXmlFile = @"data\" + metroComboBoxOriginGames.Items[metroComboBoxOriginGames.SelectedIndex] + ".profiles.xml";
-            if (!System.IO.File.Exists(profileXmlFile))
+            String profileXmlFile = @"Data\" + metroComboBoxOriginGames.Items[metroComboBoxOriginGames.SelectedIndex] + ".profiles.xml";
+            if (!File.Exists(profileXmlFile))
                 goto theend;
             try
             {
-                ValidateXmlSchema(profileXmlFile);
+                ValidateXmlSchema(profileXmlFile, "gammodprofile", @"Data\Gammod.profile.xsd");
                 dbg.WriteText("_xmlValidationErrors=" + _xmlValidationErrors);
                 if (_xmlValidationErrors > 0)
                     throw new Exception("failed.");
@@ -456,17 +363,21 @@ namespace Gammod
             if (list == null)
                 return;
             var metroLabel = new MetroLabel();
-            metroPanel4.Controls.Add(metroLabel);
-            metroLabel.Left = metroPanel4.Left + 1;
+            metroPanelDynamicFields.Controls.Add(metroLabel);
+            metroLabel.Left = metroPanelDynamicFields.Left + 1;
             metroLabel.Top = _verticalPos + 10;
             metroLabel.Text = @"Languages";
+            metroLabel.Theme = metroStyleManager.Theme;
+            metroLabel.Style = metroStyleManager.Style;
             var metroComboBox = new MetroComboBox();
-            metroPanel4.Controls.Add(metroComboBox);
+            metroPanelDynamicFields.Controls.Add(metroComboBox);
             metroComboBox.Left = metroLabel.Left + metroLabel.Width + 1;
             metroComboBox.Top = metroLabel.Top - 1;
             metroComboBox.Name = "macro.originGameLanguages.OriginGameLanguagesList";
+            metroComboBox.Theme = metroStyleManager.Theme;
+            metroComboBox.Style = metroStyleManager.Style;
             _verticalPos = metroComboBox.Top + metroComboBox.Height;
-            metroPanel4.AutoScroll = true;
+            metroPanelDynamicFields.AutoScroll = true;
             foreach (KeyValuePair<String, String> kv in list)
             {
                 dbg.WriteText(kv.Key + "=" + kv.Value);
@@ -709,7 +620,7 @@ namespace Gammod
                     {
                         dbg.WriteText(match.Groups[1].Value, 2);
                         value.InnerText = value.InnerText.Replace("${" + match.Groups[1].Value + "}",
-                            ReplaceSpecialVariable(metroPanel4, match.Groups[1].Value));
+                            ReplaceSpecialVariable(metroPanelDynamicFields, match.Groups[1].Value));
                     }
                     // second, apply regex on the value read from the registry key if "pattern" attribute is not empty
                     String patt = (value.Attributes["pattern"] != null) ? value.Attributes["pattern"].Value : "";
@@ -893,7 +804,7 @@ namespace Gammod
             metroButtonOriginApply.Enabled = combo.SelectedIndex > 0;
             metroLabelProfileDetails.Text = "";
             //destroy all controls in the child panel
-            ClearControls(metroPanel4);
+            ClearControls(metroPanelDynamicFields);
             _verticalPos = 0;
             if ((combo.SelectedIndex < 1) || (_currentGame.LastChild == null))
                 return;
@@ -922,17 +833,11 @@ namespace Gammod
                     }
                 }
             // set the vertical scrollbar
-            var vScrollBar1 = new MetroScrollBar {Orientation = MetroScrollOrientation.Vertical, Dock = DockStyle.Right};
-            vScrollBar1.Scroll += (a, b) => { metroPanel4.VerticalScroll.Value = vScrollBar1.Value; };
-            metroPanel4.Controls.Add(vScrollBar1);
-            //metroPanel4.VerticalScroll.Enabled = true;
-            //metroPanel4.AutoScroll = true;
-        }
-
-
-        private void metroComboBox4_ValueMemberChanged(object sender, EventArgs e)
-        {
-            dbg.WriteText(sender.GetType().FullName + e.ToString());
+            var vScrollBar = new MetroScrollBar { Orientation = MetroScrollOrientation.Vertical, Dock = DockStyle.Right };
+            vScrollBar.Scroll += (a, b) => { metroPanelDynamicFields.VerticalScroll.Value = vScrollBar.Value; };
+            vScrollBar.Theme = metroStyleManager.Theme;
+            vScrollBar.Style = metroStyleManager.Style;
+            metroPanelDynamicFields.Controls.Add(vScrollBar);
         }
 
 
@@ -992,13 +897,37 @@ namespace Gammod
 
         private void metroLink3_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.google.com");
+            Process.Start("https://github.com/cr1cr1/Gammod");
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this, "Not yet implemented!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
 
+        private void metroTextBoxRepositories_Leave(object sender, EventArgs e)
+        {
+            Settings.Default["ProfileRepositories"] = (sender as MetroTextBox).Text;
+        }
 
-
-
+        private void metroButtonScanOrigin_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            metroComboBoxOriginGames.Items.Clear();
+            try
+            {
+                List<string> dirs = new List<string>(Directory.GetDirectories(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\Origin\\LocalContent"));
+                foreach (var dir in dirs)
+                    metroComboBoxOriginGames.Items.Add(dir.Substring(dir.LastIndexOf(@"\") + 1));
+                i = dirs.Count;
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            metroComboBoxOriginGames.Items.Insert(0, " **** " + i + " game(s) **** ");
+            metroComboBoxOriginGames.SelectedIndex = 0;
+        }
 
     }
 }

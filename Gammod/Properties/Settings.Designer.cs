@@ -58,5 +58,17 @@ namespace Gammod.Properties {
                 this["MetroColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ProfileRepositories {
+            get {
+                return ((string)(this["ProfileRepositories"]));
+            }
+            set {
+                this["ProfileRepositories"] = value;
+            }
+        }
     }
 }

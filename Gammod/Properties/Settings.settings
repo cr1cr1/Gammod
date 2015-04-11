@@ -11,5 +11,8 @@
     <Setting Name="MetroColor" Type="MetroFramework.MetroColorStyle" Scope="User">
       <Value Profile="(Default)">Orange</Value>
     </Setting>
+    <Setting Name="ProfileRepositories" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
